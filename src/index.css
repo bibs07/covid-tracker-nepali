@@ -1,13 +1,129 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Custom CSS */
+.covidContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.covidContainer h1 {
+  text-align: center;
+}
+
+.covidContainer h2 {
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.covidInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.covidInfo img {
+  width: 50px;
+  height: 50px;
+  padding: 0.5rem;
+}
+
+.covidInfo p {
+  margin: 0;
+}
+
+.newCase,
+.recovered,
+.death {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  line-height: 1rem;
+}
+
+.newCase {
+  background-color: aqua;
+}
+
+.recovered {
+  background-color: aquamarine;
+}
+
+.death {
+  background-color: palevioletred;
+}
+
+.covidBottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.covidBottom a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Mobile view */
+
+@media only screen and (max-width: 640px) {
+  .covidContainer h1{
+    font-size: 1.5rem;
+  }
+
+  .newCase,
+  .recovered,
+  .death {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: .5rem;
+  }
+
+  .covidContainer h2 {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .covidInfo img,
+  .covidInfo p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .covidBottom{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .covidBottom div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: .2rem;
+  }
+}
+/* Smaller screen view */
+@media only screen and (max-width: 350px) {
+  .covidContainer {
+    flex-wrap: wrap;
+  }
 }
