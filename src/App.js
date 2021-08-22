@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const API_URL = "https://covid19.mohp.gov.np/covid/api/confirmedcases";
+
 function App() {
   const [covidData, setCovidData] = useState({});
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get(
-        "https://covid19.mohp.gov.np/covid/api/confirmedcases?fbclid=IwAR1QgfUrCxovx7J1WnbcEP9uQG7zDhqkiLVd8y3tu9MVY4L-_eHHxgFeKlQ",
-        {}
-      );
+      const response = await axios.get(API_URL);
       setCovidData(response.data.nepal);
     };
-    getData() 
+    getData();
   }, []);
 
   return (
